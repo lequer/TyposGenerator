@@ -1,6 +1,21 @@
 {
     "name": "mlequer/typos-generator",
-    "description": "A typos generator",
+    "type": "library",
+    "description": "Typos Generator",
+    "keywords": ["typos","generator"],
+    "homepage": "https://github.com/lequer/TyposGenerator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michel Le Quer",
+            "email": "michel@mlequer.com",
+            "homepage": "http://mlequer.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
     
      "autoload": {
         "psr-4": {"Mlequer\\": "src/MLequer"}
