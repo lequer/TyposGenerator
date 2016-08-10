@@ -2,6 +2,13 @@
 
 based on https://gist.github.com/lnolte/4135705
 
+## Installation
+
+Install the latest version with
+
+`$ composer require mlequer/typos-generator`
+
+
 ## Usage
 
 ```php
