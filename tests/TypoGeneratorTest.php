@@ -3,14 +3,17 @@ require './vendor/autoload.php';
 use PHPUnit\Framework\TestCase;
 use Mlequer\Generator\TypoGenerator;
 
+/**
+ * Tests for the typos generator
+ */
 class TypoGeneratorTest extends TestCase
 {
 
     public function testWrongKeys()
     {
         $options = ['wrongKeys' => true];
-        $tg = new TypoGenerator($options);
-        $typos = $tg->generate('test')->getTypos();
+        $typoGen = new TypoGenerator($options);
+        $typos = $typoGen->generate('test')->getTypos();
 
         foreach ($typos as $typo) {
             $this->assertEquals(strlen('test'), strlen($typo));
@@ -21,8 +24,8 @@ class TypoGeneratorTest extends TestCase
     public function testMissedChars()
     {
         $options = ['missedChars' => true];
-        $tg = new TypoGenerator($options);
-        $typos = $tg->generate('test')->getTypos();
+        $typoGen = new TypoGenerator($options);
+        $typos = $typoGen->generate('test')->getTypos();
 
         foreach ($typos as $typo) {
             $this->assertEquals(strlen('test') - 1, strlen($typo));
@@ -32,8 +35,8 @@ class TypoGeneratorTest extends TestCase
     public function testTransposedChars()
     {
         $options = ['transposedChars' => true];
-        $tg = new TypoGenerator($options);
-        $typos = $tg->generate('test')->getTypos();
+        $typoGen = new TypoGenerator($options);
+        $typos = $typoGen->generate('test')->getTypos();
 
         $expected = ['etst', 'tset', 'tets'];
 
@@ -46,8 +49,8 @@ class TypoGeneratorTest extends TestCase
     public function testDoubleChars()
     {
         $options = ['doubleChars' => true];
-        $tg = new TypoGenerator($options);
-        $typos = $tg->generate('test')->getTypos();
+        $typoGen = new TypoGenerator($options);
+        $typos = $typoGen->generate('test')->getTypos();
 
         $expected = ['ttest', 'teest', 'tesst', 'testt'];
 
@@ -60,8 +63,8 @@ class TypoGeneratorTest extends TestCase
     public function testFlipBits()
     {
         $options = ['flipBits' => true];
-        $tg = new TypoGenerator($options);
-        $typos = $tg->generate('test')->getTypos();
+        $typoGen = new TypoGenerator($options);
+        $typos = $typoGen->generate('test')->getTypos();
 
         foreach ($typos as $typo) {
             $this->assertEquals(strlen('test'), strlen($typo));
@@ -72,8 +75,8 @@ class TypoGeneratorTest extends TestCase
     public function testGenerateHomophones()
     {
         $options = ['generateHomophones' => true];
-        $tg = new TypoGenerator($options);
-        $typos = $tg->generate('heireloom')->getTypos();
+        $typoGen = new TypoGenerator($options);
+        $typos = $typoGen->generate('heireloom')->getTypos();
 
         $expected = array(
             'aireloom',

@@ -1,10 +1,9 @@
 <?php
 
-namespace Mlequer\Generator;
+namespace MLequer\Generator;
 
 class TypoGenerator
 {
-
     private $options = [
         'wrongKeys' => false,
         'missedChars' => false,
@@ -91,6 +90,7 @@ class TypoGenerator
         if (($key = array_search($this->word, $this->typos)) !== false) {
             unset($this->typos[$key]);
         }
+
         return $this;
     }
 
@@ -193,26 +193,26 @@ class TypoGenerator
         $allowed_chars = '/[a-zA-Z0-9_\-\.]/';
         $typos = [];
 
-
-        $filter = function ($x) use ($allowed_chars) {
-            return preg_match($allowed_chars, $x);
+        $filter = function ($string) use ($allowed_chars) {
+            return preg_match($allowed_chars, $string);
         };
 
         for ($i = 0; $i < count($characters); ++$i) {
-            $c = $characters[$i];
-            $mapped = function ($mask) use ($c) {
-                return strtolower(chr(ord($c) ^ $mask));
+            $char = $characters[$i];
+            $mapped = function ($mask) use ($char) {
+                return strtolower(chr(ord($char) ^ $mask));
             };
             $flipped = array_filter(array_map($mapped, $masks), $filter);
-            $typos[] = array_map(function ($x) use ($i) {
-                return substr_replace($this->word, $x, $i, 1);
+            $typos[] = array_map(function ($char) use ($i) {
+                return substr_replace($this->word, $char, $i, 1);
             }, $flipped);
         }
 
         $return = array();
-        array_walk_recursive($typos, function($a) use (&$return) {
-            $return[] = $a;
+        array_walk_recursive($typos, function ($val) use (&$return) {
+            $return[] = $val;
         });
+
         return $return;
     }
 
