@@ -1,4 +1,7 @@
 {
+    "name": "mlequer/typos-generator",
+    "description": "A typos generator",
+    
      "autoload": {
         "psr-4": {"Mlequer\\": "src/MLequer"}
     }
