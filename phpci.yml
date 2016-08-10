@@ -17,13 +17,14 @@ test:
     php_unit:
         config: 
            - "phpunit.xml.dist"
-        coverage: "tests/logs/coverage"
+        coverage: "/tests/logs/coverage"
         
     php_code_sniffer:
         path: "src"
         allowed_errors: 10
         allow_warnings: 99999
         ignore:
+            - 'vendor'
         
     php_mess_detector:
         path: 'src'

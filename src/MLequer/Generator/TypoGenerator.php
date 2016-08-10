@@ -101,13 +101,13 @@ class TypoGenerator
 
     private function getHomophones()
     {
-        $word_sets = array_map(function ($value) {
+        $wordSets = array_map(function ($value) {
             return explode(',', strtolower(trim($value)));
         }, $this->homophones);
 
         $dictionary = array();
 
-        foreach ($word_sets as $set) {
+        foreach ($wordSets as $set) {
             foreach ($set as $word) {
                 $dictionary[$word] = $set;
             }
@@ -190,11 +190,11 @@ class TypoGenerator
     {
         $characters = str_split($this->word);
         $masks = [128, 64, 32, 16, 8, 4, 2, 1];
-        $allowed_chars = '/[a-zA-Z0-9_\-\.]/';
+        $allowedChars = '/[a-zA-Z0-9_\-\.]/';
         $typos = [];
 
-        $filter = function ($string) use ($allowed_chars) {
-            return preg_match($allowed_chars, $string);
+        $filter = function ($string) use ($allowedChars) {
+            return preg_match($allowedChars, $string);
         };
 
         for ($i = 0; $i < count($characters); ++$i) {
