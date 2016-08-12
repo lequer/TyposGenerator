@@ -20,10 +20,10 @@
         "squizlabs/php_codesniffer": "2.*",
         "sebastian/phpdcd": "*",
         "phpmd/phpmd" : "@stable",
-        "phpunit/phpunit": "4.0.*",
+        "phpunit/phpunit": "5.*",
         "sebastian/phpcpd": "*",
-        "jakub-onderka/php-parallel-lint": "0.*",
-        "phpunit/php-code-coverage": "2.0.0",
+        "jakub-onderka/php-parallel-lint": "*",
+        "phpunit/php-code-coverage": "*",
         "pdepend/pdepend": "2.2.2"
     },
      "autoload": {
