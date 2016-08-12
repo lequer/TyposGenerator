@@ -7,10 +7,13 @@ setup:
     composer:
         action: "install"
 
-test:
+test:  
+    shell:
+        - phpcbf "%BUILD_PATH%/src --standard=psr2"
+        
     php_cs_fixer:
         verbose: false
-        diff: false
+        diff: true
         level: "psr2"
         
         workingdir: "/src"
