@@ -15,7 +15,7 @@ test:
         verbose: false
         diff: true
         level: "psr2"
-        workingdir: "/src"
+        workingdir: "src"
         
     php_parallel_lint:
         directory: "src"
@@ -26,10 +26,9 @@ test:
         
     php_code_sniffer:
         path: "src"
+        standard: "psr2"
         allowed_errors: 10
         allow_warnings: 99999
-        ignore:
-            - 'vendor'
         
     php_mess_detector:
         path: 'src'

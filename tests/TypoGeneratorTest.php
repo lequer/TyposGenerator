@@ -1,11 +1,11 @@
 <?php
-require __DIR__.'/../vendor/autoload.php';
+use PHPUnit\Framework\TestCase;
 use Mlequer\Generator\TypoGenerator;
 
 /**
  * Tests for the typos generator
  */
-class TypoGeneratorTest extends \PHPUnit\Framework\TestCase
+class TypoGeneratorTest extends TestCase
 {
 
     public function testWrongKeys()
