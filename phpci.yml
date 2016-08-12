@@ -2,6 +2,7 @@ build_settings:
     ignore:
         - "vendor"
         - "tests"
+    verbose: true
 
 setup:
     composer:
