@@ -15,8 +15,11 @@ test:
         verbose: false
         diff: true
         level: "psr2"
-        
         workingdir: "/src"
+        
+    php_parallel_lint:
+        directory: "src"
+        
     php_unit:
         config: 
            - "phpunit.xml"
@@ -51,4 +54,7 @@ test:
         
     php_loc:
         directory: "src"
+        
+    pdepend:
+        directory: "protected"
 
