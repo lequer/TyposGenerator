@@ -19,5 +19,7 @@
     
      "autoload": {
         "psr-4": {"Mlequer\\": "src/MLequer"}
+    },
+    "require-dev": {
     }
 }
