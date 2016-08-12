@@ -1,6 +1,6 @@
 <?php
 // require './vendor/autoload.php';
-use PHPUnit\Framework\TestCase;
+use \PHPUnit\Framework\TestCase;
 use Mlequer\Generator\TypoGenerator;
 
 /**

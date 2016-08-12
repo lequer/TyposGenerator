@@ -6,7 +6,7 @@ build_settings:
 setup:
     composer:
         action: "install"
-
+#https://github.com/Block8/PHPCI/issues/326
 test:  
     shell:
         - phpcbf src --standard=psr2
