@@ -27,9 +27,9 @@ test:
         
     php_code_sniffer:
         path: "src"
-        standard: "psr2"
         allowed_errors: 10
-        allow_warnings: 99999
+        standard: "psr2"
+        allowed_warnings: 100
         
     php_mess_detector:
         path: 'src'
