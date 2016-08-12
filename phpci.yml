@@ -9,7 +9,7 @@ setup:
 
 test:  
     shell:
-        - phpcbf "%BUILD_PATH%/src --standard=psr2"
+        - phpcbf src --standard=psr2
         
     php_cs_fixer:
         verbose: false
@@ -56,5 +56,5 @@ test:
         directory: "src"
         
     pdepend:
-        directory: "protected"
+        directory: "src"
 
