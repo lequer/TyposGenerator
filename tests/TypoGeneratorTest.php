@@ -1,6 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use Mlequer\Generator\TypoGenerator;
+use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 
 /**
  * Tests for the typos generator
@@ -8,6 +9,13 @@ use Mlequer\Generator\TypoGenerator;
 class TypoGeneratorTest extends TestCase
 {
 
+    public function testWrongOptions()
+    {
+        $this->expectException(UndefinedOptionsException::class);
+        $options = ['wrongOptions' => true];
+        $typoGen = new TypoGenerator($options);
+    }
+    
     public function testWrongKeys()
     {
         $options = ['wrongKeys' => true];

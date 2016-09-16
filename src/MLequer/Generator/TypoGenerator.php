@@ -9,6 +9,8 @@
 
 namespace MLequer\Generator;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * TypoGenerator Class.
  *
@@ -125,7 +127,14 @@ class TypoGenerator
      */
     public function __construct(array $options)
     {
-        $this->options = array_merge($this->options, $options);
+        $resolver = new OptionsResolver();
+        $this->configureOptions($resolver);
+        $this->options = $resolver->resolve($options);
+    }
+    
+     public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults($this->options);
     }
 
     /**
