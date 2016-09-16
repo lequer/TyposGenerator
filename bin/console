@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+/* 
+ * Copyright (c) Michel Le Quer
+ * All rights reserved.
+ */
+
+require __DIR__.'/../vendor/autoload.php';
+
+
+use MLequer\Command\TyposCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->add(new TyposCommand());
+$application->run();

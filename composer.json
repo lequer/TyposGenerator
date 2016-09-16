@@ -15,7 +15,8 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "symfony/options-resolver": "^3.1"
+        "symfony/options-resolver": "^3.1",
+        "symfony/console": "^3.1"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "2.*",
@@ -28,6 +29,6 @@
         "pdepend/pdepend": "2.2.2"
     },
      "autoload": {
-        "psr-4": {"Mlequer\\": "src/MLequer"}
+        "psr-4": {"MLequer\\": "src/MLequer"}
     }
 }

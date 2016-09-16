@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use Mlequer\Generator\TypoGenerator;
+use MLequer\Generator\TypoGenerator;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 
 /**

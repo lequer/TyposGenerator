@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="7" assertions="107" failures="0" errors="0" time="0.034776">
-    <testsuite name="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" tests="7" assertions="107" failures="0" errors="0" time="0.034776">
-      <testcase name="testWrongOptions" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="12" assertions="1" time="0.003725"/>
-      <testcase name="testWrongKeys" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="19" assertions="48" time="0.004062"/>
-      <testcase name="testMissedChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="31" assertions="4" time="0.001600"/>
-      <testcase name="testTransposedChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="42" assertions="4" time="0.001664"/>
-      <testcase name="testDoubleChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="56" assertions="5" time="0.001551"/>
-      <testcase name="testFlipBits" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="70" assertions="40" time="0.004575"/>
-      <testcase name="testGenerateHomophones" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="82" assertions="5" time="0.017599"/>
+  <testsuite name="" tests="9" assertions="109" failures="1" errors="0" time="0.072607">
+    <testsuite name="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" tests="7" assertions="107" failures="0" errors="0" time="0.036837">
+      <testcase name="testWrongOptions" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="12" assertions="1" time="0.003766"/>
+      <testcase name="testWrongKeys" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="19" assertions="48" time="0.004326"/>
+      <testcase name="testMissedChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="31" assertions="4" time="0.001562"/>
+      <testcase name="testTransposedChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="42" assertions="4" time="0.002045"/>
+      <testcase name="testDoubleChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="56" assertions="5" time="0.001566"/>
+      <testcase name="testFlipBits" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="70" assertions="40" time="0.004326"/>
+      <testcase name="testGenerateHomophones" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="82" assertions="5" time="0.019246"/>
+    </testsuite>
+    <testsuite name="MLequer\Command\CreateUserCommandTest" file="/home/michel/Dev/php/TyposGenerator/tests/src/MLequer/Command/TyposCommandTest.php" tests="2" assertions="2" failures="1" errors="0" time="0.035770">
+      <testcase name="testWrongKeysExecute" class="MLequer\Command\CreateUserCommandTest" file="/home/michel/Dev/php/TyposGenerator/tests/src/MLequer/Command/TyposCommandTest.php" line="23" assertions="1" time="0.025222"/>
+      <testcase name="testMissedCharsExecute" class="MLequer\Command\CreateUserCommandTest" file="/home/michel/Dev/php/TyposGenerator/tests/src/MLequer/Command/TyposCommandTest.php" line="33" assertions="1" time="0.010548">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">MLequer\Command\CreateUserCommandTest::testMissedCharsExecute
+Failed asserting that 'est
+tst
+tet
+tes
+' contains "rest".
+
+/home/michel/Dev/php/TyposGenerator/tests/src/MLequer/Command/TyposCommandTest.php:40
+</failure>
+      </testcase>
     </testsuite>
   </testsuite>
 </testsuites>
