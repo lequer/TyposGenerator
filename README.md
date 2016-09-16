@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/lequer/TyposGenerator.svg?branch=master)](https://travis-ci.org/lequer/TyposGenerator)
 # TyposGenerator
 
 based on https://gist.github.com/lnolte/4135705
