@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1474016751">
-  <project timestamp="1474016751">
+<coverage generated="1474017966">
+  <project timestamp="1474017966">
     <package name="MLequer\Generator">
       <file name="/home/michel/Dev/php/TyposGenerator/src/MLequer/Generator/TypoGenerator.php">
         <class name="TypoGenerator" namespace="MLequer\Generator">
