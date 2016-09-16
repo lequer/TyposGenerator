@@ -1,0 +1,5 @@
+projectKey=typos:generator
+serverUrl=http://localhost:9000/sonar
+dashboardUrl=http://localhost:9000/sonar/dashboard/index/typos:generator
+ceTaskId=AVaINKn36uQ5Hy8TQniC
+ceTaskUrl=http://localhost:9000/sonar/api/ce/task?id=AVaINKn36uQ5Hy8TQniC

@@ -23,5 +23,7 @@
             yui="true" highlight="true"
             lowUpperBound="50" highLowerBound="80"/>
         <log type="testdox-html" target="./tests/log/testdox.html" />
+        <log type="junit" target="./reports/junit.xml" logIncompleteSkipped="false"/>
+        <log type="coverage-clover" target="./reports/clover.xml"/>
     </logging>
 </phpunit>

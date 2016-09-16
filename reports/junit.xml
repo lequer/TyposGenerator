@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="6" assertions="106" failures="0" errors="0" time="0.067872">
+    <testsuite name="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" tests="6" assertions="106" failures="0" errors="0" time="0.067872">
+      <testcase name="testWrongKeys" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="11" assertions="48" time="0.033504"/>
+      <testcase name="testMissedChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="23" assertions="4" time="0.001744"/>
+      <testcase name="testTransposedChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="34" assertions="4" time="0.001427"/>
+      <testcase name="testDoubleChars" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="48" assertions="5" time="0.001424"/>
+      <testcase name="testFlipBits" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="62" assertions="40" time="0.004707"/>
+      <testcase name="testGenerateHomophones" class="TypoGeneratorTest" file="/home/michel/Dev/php/TyposGenerator/tests/TypoGeneratorTest.php" line="74" assertions="5" time="0.025066"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
