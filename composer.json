@@ -1,0 +1,25 @@
+{
+    "name": "mlequer/typos-generator",
+    "description": "A typos generator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michel Le Quer",
+            "email": "michel@mlequer.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {"MLequer\\Component\\Typos\\": "src/"}
+    },
+    "scripts": {
+        "test": "/vendor/bin/simple-phpunit"
+    }
+}
