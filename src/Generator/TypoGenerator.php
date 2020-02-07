@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2020. >Michel Le Quer michel@mlequer.com>
  *
@@ -23,12 +24,12 @@
 
 namespace MLequer\Component\Typos\Generator;
 
-use MLequer\Component\Typos\Provider\TyposProviderInterface;
+use Generator;
 
 /**
  * TypoGenerator Class.
  *
- * A utility class that generate typos.
+ * A utility class that generate typos based on providers
  *
  * @author "Michel Le Quer <michel@mlequer.com>"
  * @since  0.1
@@ -36,11 +37,23 @@ use MLequer\Component\Typos\Provider\TyposProviderInterface;
 class TypoGenerator extends AbstractTyposGenerator
 {
 
-    public function generateTypos($word): \Traversable
+    /**
+     * Generate typos an return a generator
+     *
+     * @param string $word the base word
+     * @return Generator<string> A generator that can be used with 'foreach'
+     */
+    public function generateTypos($word): Generator
     {
-        return $this->provider->generateTypos($word);
+        yield from $this->typoProvider->generateTypos($word);
     }
 
+    /**
+     * Generate typos and return an array.
+     *
+     * @param string $word
+     * @return array<string>
+     */
     public function generateTyposAsArray(string $word): array
     {
         return iterator_to_array($this->generateTypos($word), false);

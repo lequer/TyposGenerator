@@ -1,25 +1,55 @@
 {
-    "name": "mlequer/typos-generator",
-    "description": "A typos generator",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Michel Le Quer",
-            "email": "michel@mlequer.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "php": ">=7.4"
-    },
-    "require-dev": {
-        "symfony/phpunit-bridge": "^5.0"
-    },
-    "autoload": {
-        "psr-4": {"MLequer\\Component\\Typos\\": "src/"}
-    },
-    "scripts": {
-        "test": "/vendor/bin/simple-phpunit"
+  "name": "mlequer/typos-generator",
+  "description": "A typos generator",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michel Le Quer",
+      "email": "michel@mlequer.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^5.0",
+    "phpmd/phpmd": "@stable",
+    "squizlabs/php_codesniffer": "^3.0",
+    "phpstan/phpstan": "^0.12.9",
+    "brainmaestro/composer-git-hooks": "^2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "MLequer\\Component\\Typos\\": "src/"
+    }
+  },
+  "autoload-dev":  {
+    "psr-4": {
+      "MLequer\\Component\\Typos\\": ["src/", "tests/"]
+    }
+  },
+  "scripts": {
+    "cghooks": "vendor/bin/cghooks",
+    "post-install-cmd": "cghooks add --ignore-lock",
+    "post-update-cmd": "cghooks update",
+    "fix-code": "vendor/bin/phpcbf --standard=PSR12 src tests",
+    "phpstan": " vendor/bin/phpstan analyse --level max -c phpstan.neon src tests",
+    "phpcs": "vendor/bin/phpcs --standard=PSR12 src",
+    "phpmd": "vendor/bin/phpmd src text  cleancode, codesize, controversial, design, naming, unusedcode",
+    "test": "vendor/bin/simple-phpunit"
+  },
+  "extra": {
+    "hooks": {
+      "pre-commit": [
+        "echo committing as $(git config user.name)",
+        "composer phpcs",
+        "composer phpmd",
+        "composer phpstan"
+      ],
+      "post-commit": "echo committed",
+      "post-merge": "composer update"
+    }
+  }
 }

@@ -1,4 +1,7 @@
 <?php
+
+/** @noinspection ALL */
+
 /**
  * Copyright (c) 2020. >Michel Le Quer michel@mlequer.com>
  *
@@ -25,7 +28,7 @@
 
 namespace MLequer\Component\Typos\Provider;
 
-
+use Generator;
 
 /**
  * Class BitFlippingTyposGenerator
@@ -36,8 +39,10 @@ class BitFlippingTyposGenerator implements TyposProviderInterface
 {
     /**
      * @inheritDoc
+     *
+     *
      */
-    public function generateTypos(string $word): \Traversable
+    public function generateTypos(string $word): Generator
     {
         $masks = [128, 64, 32, 16, 8, 4, 2, 1];
         $allowedChars = '/[a-zA-Z0-9_\-\.]/';
@@ -47,7 +52,6 @@ class BitFlippingTyposGenerator implements TyposProviderInterface
             return preg_match($allowedChars, $string);
         };
         foreach (str_split($word) as $i => $char) {
-
             $mapped = function ($mask) use ($char) {
                 return strtolower(chr(ord($char) ^ $mask));
             };

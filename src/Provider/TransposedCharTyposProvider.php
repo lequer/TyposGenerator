@@ -20,47 +20,29 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
- * php version 7.4
  */
 
 namespace MLequer\Component\Typos\Provider;
 
 use Generator;
-use MLequer\Component\Typos\Generator\TyposGeneratorInterface;
 
-class ChainTyposProvider implements TyposProviderInterface
+class TransposedCharTyposProvider implements TyposProviderInterface
 {
-
-
-    /**
-     * @var TyposProviderCollection
-     */
-    private TyposProviderCollection $providerCollection;
-
-    public function __construct(TyposProviderCollection $providerCollection)
-    {
-        $this->providerCollection = $providerCollection;
-    }
-
-    /**
-     * @param TyposProviderInterface $provider
-     * @return void
-     */
-    public function addProvider(TyposProviderInterface $provider): void
-    {
-        $this->providerCollection->addProvider($provider);
-    }
-
-
     /**
      * @inheritDoc
+     *
      */
     public function generateTypos(string $word): Generator
     {
-        /** @var TyposGeneratorInterface $provider */
-        foreach ($this->providerCollection as $provider) {
-            yield from $provider->generateTypos($word);
+        $length = strlen($word);
+        foreach (str_split($word) as $i => $char) {
+            if ($i + 1 == $length) {
+                break;
+            }
+            $tempWord = $word;
+            $tempWord = substr_replace($tempWord, $tempWord[$i + 1], $i, 1);
+            $tempWord = substr_replace($tempWord, $char, $i + 1, 1);
+            yield $tempWord;
         }
     }
 }

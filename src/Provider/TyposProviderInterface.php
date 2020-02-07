@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2020. >Michel Le Quer michel@mlequer.com>
  *
@@ -25,8 +26,13 @@
 
 namespace MLequer\Component\Typos\Provider;
 
+use Generator;
 
 interface TyposProviderInterface
 {
-    public function generateTypos(string $word): \Traversable;
+    /**
+     * @param string $word The word to generate typos from
+     * @return Generator<string>
+     */
+    public function generateTypos(string $word): Generator;
 }

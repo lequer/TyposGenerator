@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2020. >Michel Le Quer michel@mlequer.com>
  *
@@ -25,19 +26,17 @@
 
 namespace MLequer\Component\Typos\Generator;
 
+use MLequer\Component\Typos\Provider\TyposProviderInterface;
 
-use MLequer\Component\Typos\Provider\{TyposProviderInterface};
-
-abstract class AbstractTyposGenerator  implements TyposGeneratorInterface
+abstract class AbstractTyposGenerator implements TyposGeneratorInterface
 {
     /**
      * @var TyposProviderInterface
      */
     protected TyposProviderInterface $typoProvider;
 
-    public function __construct(TyposProviderInterface $typoProvider) {
-
+    public function __construct(TyposProviderInterface $typoProvider)
+    {
         $this->typoProvider = $typoProvider;
     }
-
 }

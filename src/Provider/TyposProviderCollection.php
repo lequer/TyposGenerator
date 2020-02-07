@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2020. >Michel Le Quer michel@mlequer.com>
  *
@@ -25,26 +26,37 @@
 
 namespace MLequer\Component\Typos\Provider;
 
+use ArrayIterator;
+use IteratorAggregate;
 
-
-class TyposProviderCollection implements \IteratorAggregate
+/**
+ * Class TyposProviderCollection
+ * @package MLequer\Component\Typos\Provider
+ *
+ * @implements \IteratorAggregate<TyposProviderInterface>
+ */
+class TyposProviderCollection implements IteratorAggregate
 {
 
     /**
-     * @var TyposProviderInterface[]
+     * @var array<TyposProviderInterface>
      */
-    private array $providers = [];
+    private $providers = [];
 
+    /**
+     * @param TyposProviderInterface $provider Add a typos provider to the collection
+     * @return void
+     */
     public function addProvider(TyposProviderInterface $provider): void
     {
         $this->providers[] = $provider;
     }
 
     /**
-     * @inheritDoc
+     * @return ArrayIterator<int, TyposProviderInterface>
      */
-    public function getIterator(): \Iterator
+    public function getIterator(): ArrayIterator
     {
-        return new \ArrayIterator($this->providers);
+        return new ArrayIterator($this->providers);
     }
 }
