@@ -1,0 +1,35 @@
+image: php:7.4.1-cli-buster
+
+stages:
+    - check-code
+    - test
+cache:
+    paths:
+        - vendor/
+
+before_script:
+    # Install git (the php image doesn't have it) which is required by composer
+    - apt-get update -yqq
+    - apt-get install git zip unzip -yqq
+    # Install composer dependencies
+    - curl -o installer.sig https://composer.github.io/installer.sig -q 
+    - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    - php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    - php composer-setup.php --install-dir=/usr/bin --filename=composer
+    - php -r "unlink('composer-setup.php'); unlink('installer.sig');"
+    - composer install
+    - composer preload-test
+
+install_dependencies:
+    stage: check-code
+    script:
+        - composer phpcs
+        - composer phpmd
+        - composer phpstan
+
+run_phpunit:
+    stage: test
+    script:
+        - composer test
+
+
