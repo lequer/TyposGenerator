@@ -38,7 +38,8 @@
     "phpstan": " vendor/bin/phpstan analyse --level max -c phpstan.neon src tests",
     "phpcs": "vendor/bin/phpcs --standard=PSR12 src",
     "phpmd": "vendor/bin/phpmd src text  cleancode, codesize, controversial, design, naming, unusedcode",
-    "test": "vendor/bin/simple-phpunit"
+    "preload-test": "vendor/bin/simple-phpunit -h",
+    "test": "vendor/bin/simple-phpunit -c phpunit.xml"
   },
   "extra": {
     "hooks": {
