@@ -7,15 +7,7 @@
  *                                                                            *
  ******************************************************************************/
 
-/******************************************************************************
- * @author  Michel Le Quer <michel@mlequer.com> - https://mlequer.com          *
- * @version 1.0.0                                                             *
- * @license see LICENSE included in package                                   *
- *                                                                            *
- ******************************************************************************/
-
 namespace MLequer\Component\Typos\Generator;
-
 
 use MLequer\Component\Typos\Provider\TyposProviderInterface;
 use PHPUnit\Framework\TestCase;
@@ -47,7 +39,7 @@ class TypoGeneratorTest extends TestCase
 
 
     /**
-     * @uses   \MLequer\Component\Typos\Generator\AbstractTyposGenerator::__construct
+     * @covers   \MLequer\Component\Typos\Generator\AbstractTyposGenerator::__construct
      * @covers ::generateTypos
      */
     public function testTyposAsGenerator(): void

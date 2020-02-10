@@ -42,11 +42,12 @@ class TyposProviderCollection implements IteratorAggregate
 
     /**
      * @param TyposProviderInterface $provider Add a typos provider to the collection
-     * @return void
+     * @return TyposProviderCollection
      */
-    public function addProvider(TyposProviderInterface $provider): void
+    public function addProvider(TyposProviderInterface $provider): TyposProviderCollection
     {
         $this->providers[] = $provider;
+        return $this;
     }
 
     /**
