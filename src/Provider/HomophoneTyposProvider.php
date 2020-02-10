@@ -36,7 +36,6 @@ class HomophoneTyposProvider implements TyposProviderInterface
     public function generateTypos(string $word): Generator
     {
         $homophones = $this->getHomophones();
-        var_dump($homophones);
 
         foreach ($homophones as $key => $set) {
             if (strpos($word, $key) !== false) {

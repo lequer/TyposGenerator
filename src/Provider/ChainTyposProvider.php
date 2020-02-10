@@ -7,20 +7,6 @@
  *                                                                            *
  ******************************************************************************/
 
-/******************************************************************************
- * @author Michel Le Quer <michel@mlequer.com> - https://mlequer.com          *
- * @version 1.0.0                                                             *
- * @license see LICENSE included in package                                   *
- *                                                                            *
- ******************************************************************************/
-
-/******************************************************************************
- * @author Michel Le Quer <michel@mlequer.com> - http:s//mlequer.com          *
- * @version 2.0.0                                                             *
- * @license see LICENSE included in package                                   *
- *                                                                            *
- ******************************************************************************/
-
 namespace MLequer\Component\Typos\Provider;
 
 use Generator;
@@ -42,16 +28,19 @@ class ChainTyposProvider implements TyposProviderInterface
 
     /**
      * @param TyposProviderInterface $provider
-     * @return void
+     * @return ChainTyposProvider
      */
-    public function addProvider(TyposProviderInterface $provider): void
+    public function addProvider(TyposProviderInterface $provider): ChainTyposProvider
     {
         $this->providerCollection->addProvider($provider);
+        return $this;
     }
 
 
     /**
-     * @inheritDoc
+     * @inheritDocvoid
+     *
+     * @return Generator
      */
     public function generateTypos(string $word): Generator
     {
