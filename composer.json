@@ -39,7 +39,7 @@
     "phpcs": "vendor/bin/phpcs --standard=PSR12 src",
     "phpmd": "vendor/bin/phpmd src text  cleancode, codesize, controversial, design, naming, unusedcode",
     "preload-test": "vendor/bin/simple-phpunit -h",
-    "test": "vendor/bin/simple-phpunit -c phpunit.xml"
+    "test": "vendor/bin/simple-phpunit -c phpunit.xml --coverage-text"
   },
   "extra": {
     "hooks": {
