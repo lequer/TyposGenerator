@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ @author Michel Le Quer <michel@mlequer.com> - https://mlequer.com
+  ~ @version 1.0.0
+  ~ @license see LICENSE included in package
+  ~
+  -->
+
+<!--
+  ~ @author Michel Le Quer <michel@mlequer.com> - https://mlequer.com
+  ~ @version 1.0.0
+  ~ @license see LICENSE included in package
+  ~
+  -->
+
+<!--
+  ~ @author Michel Le Quer <michel@mlequer.com> - http:s//mlequer.com
+  ~ @version 2.0.0
+  ~ @license see LICENSE included in package
+  ~
+  -->
+
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.3/phpunit.xsd"
          bootstrap="vendor/autoload.php"
