@@ -9,6 +9,9 @@ Install the latest version with
 
 `$ composer require mlequer/typos-generator`
 
+>
+>if you are looking for the command line generator, use  `mlequer/typos-generator-command` instead
+>
 
 ## Usage
 
